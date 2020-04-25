@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ristorante Con Fusion</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-social/bootstrap-social.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      body {
+        position: relative;
+        height: 100% !important;
+      }
+      .content-section {
+          height: auto;
+        min-height: 2000px;
+        width: 100%;
+      }
+
+      .make-me-sticky li {
+        list-style-type: none;
+        padding: 4%;
+        margin: 2%;
+      }
+      .make-me-sticky li > a {
+        width: 100%;
+        color: black !important;
+        padding: 11px 63px !important;
+      }
+
+      .sidebar-section {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      .sidebar-item {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        /* Position the items */
+      }
+
+      .make-me-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 0 1px;
+      }
+
+      /* Ignore This, just coloring */
+      body {
+        background: #fff;
+      }
+
+      article {
+        background: #f1f1f1;
+        border-radius: 12px;
+        padding: 25px 0 600px;
+      }
+
+      .title-section,
+      .content-section,
+      .sidebar-section {
+        background: #fff;
+      }
+
+      .title-section {
+        text-align: center;
+        padding: 50px 15px;
+        margin-bottom: 30px;
+      }
+
+      .content-section h2 {
+        text-align: center;
+        margin: 0;
+        padding-top: 200px;
+      }
+
+      .sidebar-item {
+        text-align: center;
+      }
+      .sidebar-item h3 {
+        background: gold;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 50px 0 100px;
+        border-bottom: solid 1px #fff;
+      }
+    </style>
+  </head>
+
+  <body data-spy="scroll" data-target="#verticalScrollspy" data-offset="89">
+    <nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="#"
+          ><img src="img/logo.png" height="30" width="41"
+        /></a>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <span class="fa fa-home fa-lg"> </span> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./aboutus.html">
+                <span class="fa fa-info fa-lg"> </span>About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="fa fa-list fa-lg"> </span>Menu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactus.html"
+                ><span class="fa fa-address-card fa-lg"> </span>Contact</a
+              >
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <a data-toggle="modal" data-target="#loginModal">
+              <span class="fa fa-sign-in"></span> Login</a
+            >
+          </span>
+        </div>
+      </div>
+    </nav>
+    <!-- modal for login -c  -->
+
+    <article>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="title-section">
+              <h1>Basic Sticky Sidebar with Bootstrap 4</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="sidebar-item">
+              <div class="make-me-sticky">
+                <li>
+                  <a href="#One" class="btn btn-primary">
+                    Category Name </a>
+                </li>
+
+                <li>
+                  <a href="#three" class="btn btn-primary ">
+                                       Category Name
+
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="btn btn-primary">
+                    Content Two
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="btn btn-primary">
+                    Content
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="btn btn-primary">
+                    Content
+                  </a>
+                </li>
+              </div>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="content-section " id="One">
+              <h2>Content Section oNe</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section" id="three">
+              <h2>Content Section fuck</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+            <div class="content-section">
+              <h2>Content Section</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+                repellendus praesentium ratione eos dicta? Nulla ipsam iure
+                natus unde, tempora soluta, perferendis eligendi eos
+                necessitatibus obcaecati amet qui, minus ab?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <script>
+      $("#verticalScrollspy").scrollspy();
+
+      (function() {
+        // Your base, I'm in it!
+        var originalAddClassMethod = jQuery.fn.addClass;
+
+        jQuery.fn.addClass = function() {
+          // Execute the original method.
+          var result = originalAddClassMethod.apply(this, arguments);
+
+          // trigger a custom event
+          jQuery(this).trigger("cssClassChanged");
+
+          // return the original result
+          return result;
+        };
+      })();
+
+      $(".nav-link").bind("cssClassChanged", function(e) {
+        $(".nav-item").each(function() {
+          if ($(this).hasClass("active") == true) {
+            $(this).removeClass("active");
+          }
+        });
+
+        $(this)
+          .removeClass("active")
+          .parent()
+          .addClass("active");
+      });
+      $("body").scrollspy({ target: "#navbar-example", offset: 50 });
+    </script>
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js  "></script>
+  </body>
+</html>
