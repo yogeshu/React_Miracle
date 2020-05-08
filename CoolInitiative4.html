@@ -100,7 +100,8 @@
           </ul>
         </nav>
 
-        <div class="col-12 col-sm-12 col-md  col-lg col-xl">
+        <div class="col-12 col-sm-12 col-md  col-lg col-xl"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
           <div data-spy="scroll" data-target="#verticalScrollspy">
             <div id="sec-1" class="container-fluid py-5">
               <h1>Introduction</h1>
@@ -387,6 +388,632 @@
                       </div>
                     </div>
                   </div>
+
+
+
+{% load i18n %}
+
+<h1 class="text-center py-5">  {% trans   'Contact Us' %} </h1>
+<!--<p  class="text-center " >Hope you enjoyed and found our modules useful. For any further queries or feedback, please write to:  </p> -->
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+<div class="container-contact100">
+	<div class="wrap-contact100">
+		<form class="contact100-form validate-form" id="c" action="{% url 'send_message' group_id %} "  method="POST">
+  {% csrf_token %}
+			<span class="contact100-form-title" style="text-align:justify;">
+			Hope you enjoyed and found our modules useful. For any further queries or feedback, please write to: 
+			</span>
+
+		<!--	<label class="label-input100" for="first-name">Tell us your name *</label>  -->
+                        
+			<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+				<input  class="input100" type="text" name="first_name" placeholder="First name" required>
+				<span class="focus-input100"></span>
+                	</div>  
+			<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+				<input class="input100" type="text" name="last_name" placeholder="Last name" required>
+				<span class="focus-input100"></span>
+			</div>
+<!--
+			<label class="label-input100" for="email">Enter your email *</label> -->
+              <input type="hidden" name="domain" value={{first_arg}}>
+			<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<input id="email" type="email" class="input100"  name="email" placeholder="Eg. example@email.com" required>
+				<span class="focus-input100"></span>
+			</div>
+<!--
+			<label class="label-input100" for="phone">Enter phone number</label> -->
+			<div class="wrap-input100">
+				<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+				<span class="focus-input100"></span>
+			</div>
+
+			<label class="label-input100" for="message">Message *</label>
+			<div class="wrap-input100 validate-input" data-validate = "Message is required">
+				<textarea id="message" class="input100" name="message" placeholder="Write us a message" required></textarea>
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="container-contact100-form-btn"  id="send-message">
+                          
+				<input class="contact100-form-btn" id="send-message" type="submit" value="Send Message">
+					
+			
+			</div>
+		</form>
+
+		<div class="contact100-more flex-col-c-m" style="background-image: url('http://clix.tiss.edu/dev/ver1.0/wp-content/uploads/2015/11/Clix-logo-600x1401.png');">
+			<div class="flex-w size1 p-b-47">
+				<div class="txt1 p-r-25">
+					<span class="lnr lnr-map-marker"></span>
+				</div>
+
+				<div class="flex-col size2">
+					<span class="txt1 p-b-20">
+						Address
+					</span>
+
+					<span class="txt2">
+				Centre for Education, Innovation and Action Research
+				Tata Institute of Social Sciences
+				
+				V.N.Purav Marg, Deonar,
+				Mumbai 
+					</span>
+				</div>
+			</div>
+
+			<div class="dis-flex size1 p-b-47">
+				<div class="txt1 p-r-25">
+					<span class="lnr lnr-phone-handset"></span>
+				</div>
+
+				<div class="flex-col size2">
+					<span class="txt1 p-b-20">
+						Phone
+					</span>
+
+					<span class="txt3">
+                                      +91 22- 25525002/3/4  
+					</span>
+				</div>
+			</div>
+
+			<div class="dis-flex size1 p-b-47">
+				<div class="txt1 p-r-25">
+					<span class="lnr lnr-envelope"></span>
+				</div>
+
+				<div class="flex-col size2">
+					<span class="txt1 p-b-20">
+						General Support
+					</span>
+
+					<span class="txt3">
+						contact@clix.tiss.edu					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+/*
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+*/
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+     
+
+}
+
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ utility ]*/
+
+/*==================================================================
+[ Text ]*/
+.txt1 {
+  
+  font-size: 18px;
+  line-height: 1.2;
+  color: #ccc;
+}
+
+.txt2 {
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.txt3 {
+  
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/*==================================================================
+[ Size ]*/
+.size1 {
+  width: 355px;
+  max-width: 100%;
+}
+
+.size2 {
+  width: calc(100% - 43px);
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Contact ]*/
+.container-contact100::-webkit-input-placeholder {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.container-contact100:-ms-input-placeholder {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.container-contact100:-moz-placeholder {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.container-contact100::-moz-placeholder {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.container-contact100 {
+  width: 100%;  
+/*  min-height: 100vh;*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #f2f2f2;
+  
+}
+
+.wrap-contact100 {
+  width: 1120px;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-direction: row-reverse;
+
+}
+
+/*==================================================================
+[ Contact more ]*/
+.contact100-more {
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 30px 15px 0px 15px;
+}
+
+.contact100-more::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+
+
+/*==================================================================
+[ Form ]*/
+
+.contact100-form {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 15px 10px 15px;
+}
+
+.contact100-form-title {
+  width: 100%;
+  display: block;
+ 
+  font-size: 14px;
+  font-weight:300;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 33px;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border: 1px solid #e6e6e6;
+}
+
+.rs1-wrap-input100,
+.rs2-wrap-input100 {
+  width: 50%;
+}
+
+.rs2-wrap-input100 {
+  border-left: none;
+}
+
+.label-input100 {
+  font-size: 12px;
+  color: #555555;
+  line-height: 1.5;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 55px;
+  border: 1px solid #e6e6e6;
+  border-bottom: none; 
+  padding: 10px 25px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+ font-family: Roboto, sans-serif !important; 
+ 
+  color: #666666;
+  line-height: 1.2;
+  padding: 0 25px;
+}
+
+input.input100 {
+  height: 55px;
+}
+
+
+textarea.input100 {
+  min-height: 139px;
+  padding-top: 19px;
+  padding-bottom: 15px;
+}
+
+/*---------------------------------------------*/
+
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  pointer-events: none;
+  border: 1px solid #00ad5f;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  -webkit-transform: scaleX(1.1) scaleY(1.3);
+  -moz-transform: scaleX(1.1) scaleY(1.3);
+  -ms-transform: scaleX(1.1) scaleY(1.3);
+  -o-transform: scaleX(1.1) scaleY(1.3);
+  transform: scaleX(1.1) scaleY(1.3);
+}
+
+.input100:focus + .focus-input100 {
+  visibility: visible;
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 23px;
+}
+
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 200px;
+  height: 50px;
+  border-radius: 2px;
+  background: #00ad5f;
+
+  
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact100-form-btn:hover {
+  background: #333333;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 992px) {
+  .contact100-form {
+    width: 60%;
+    padding: 56px 30px 63px 30px;
+  }
+
+
+/*==================================================================
+[ Contact more ]*/
+.contact100-more {
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 30px 15px 0px 15px;
+}
+
+  .contact100-more {
+    width: 40Phone: +91 %;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact100-form {
+    width: 100%;
+  }
+
+  .contact100-more {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact100-form {
+    padding: 56px 15px 63px 15px;
+  }
+
+  .rs1-wrap-input100,
+  .rs2-wrap-input100 {
+    width: 100%;
+  }
+
+  .rs2-wrap-input100 {
+    border-left: 1px solid #e6e6e6;
+    border-top: none;
+  }
+}
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+/*==================================================================
+[ Contact more ]*/
+.contact100-more {
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 30px 15px 0px 15px;
+}
+
+  
+
+.alert-validate::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 8px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+</style>
+
                 </div>
 
                 <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5">
@@ -442,6 +1069,7 @@
                     </div>
                   </div>
                 </div> -->
+                
               </div>
             </div>
           </div>
@@ -459,7 +1087,7 @@
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
@@ -469,11 +1097,78 @@
         </div>
         <div class="modal-body">
           ...
+         
+<div class="container">
+          
+          
+          <div class="row">
+            <div class="col-8">
+          <img src="https://i.picsum.photos/id/694/400/300.jpg"  class="img-fluid"  height="auto">
+            </div>
+            <div class="col-4">
+                <p> <i class="fas fa-rocket"></i> 
+                          Explore   </p> 
+
+                  <p> <i class="fa fa-share-alt"> </i>  SHare
+                </p>
+            </div>
+          </div>
+          
+          
+          <hr>
+          <div class="col-12">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nulla quis magnam facere ipsam hic aspernatur perspiciatis recusandae veniam magni dolores quas, animi eligendi quam, soluta libero debitis eos quaerat. </p>
+            
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nulla quis magnam facere ipsam hic aspernatur perspiciatis recusandae veniam magni dolores quas, animi eligendi quam, soluta libero debitis eos quaerat. </p>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nulla quis magnam facere ipsam hic aspernatur perspiciatis recusandae veniam magni dolores quas, animi eligendi quam, soluta libero debitis eos quaerat. </p>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nulla quis magnam facere ipsam hic aspernatur perspiciatis recusandae veniam magni dolores quas, animi eligendi quam, soluta libero debitis eos quaerat. </p>
+            <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i class="fas fa-globe"> </i> Website </td>
+      <td><a href="#"> Clixoer.com </a></td>
+    </tr>
+    
+    <tr>
+      <td>subject</td>
+      <td>Thornton</td>
+    </tr>
+    
+     <tr>
+      <td>Grade</td>
+      <td>Thornton</td>
+    </tr> <tr>
+      <td>Language</td>
+      <td>Thornton</td>
+    </tr>
+    
+     <tr>
+      <td>offline access </td>
+      <td>yes </td>
+    </tr> <tr>
+      <td>Device Complatibility</td>
+      <td>Yes </td>
+    </tr> <tr>
+      <td>Lincence</td>
+      <td>GNU 3</td>
+    </tr> <tr>
+      <td>Tags : </td>
+      <td> OER , Education</td>
+    </tr> 
+  </tbody>
+</table>
+          </div>
+
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          
         </div>
       </div>
     </div>

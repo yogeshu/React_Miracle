@@ -15,14 +15,6 @@
   margin: 0px auto;
   padding: 20px 0px;
 }
-.jumbotron {
-  background-color: #fff;
-}
-.some-dark {
-  -webkit-box-shadow: -2px 1px 13px 0px rgba(0,0,0,0.44);
--moz-box-shadow: -2px 1px 13px 0px rgba(0,0,0,0.44);
-box-shadow: -2px 1px 13px 0px rgba(0,0,0,0.44);
-}
 
 address {
   font-size: 80%;

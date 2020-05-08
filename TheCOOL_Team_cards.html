@@ -1,0 +1,252 @@
+<style>
+    li{
+    text-align: justify;
+    }
+    
+    </style>
+    <div class="container" style="margin-bottom: 10px;">
+            <div class="row">
+                 <div class="col-5 text-center mx-auto">
+                    <h1>
+     <!--  Our -->
+     Team  Details </h1>
+                 </div>
+    {% if first_arg == 'English' %}         
+        <div class="col-10 text-center mx-auto">
+                  <!--  <p style="max-width: 450px; text-center ">
+    The English Team at TISS designs and creates the CLIx English course for students and the English Teacher Professional Development (TPD) courses for teachers</p> -->
+                </div>
+    {% endif %}
+            </div>
+            <div class="row">
+              <div class="col-11">
+                <div class="carousel-team-card" data-flickity='{ "groupCells": 3, "wrapAround": true    }'>
+                     {% if first_arg == 'Mathematics' %}             
+                               {% for slide in employee.Team_detail_math %} 
+                                 {% if slide.language == request.LANGUAGE_CODE %}
+                 <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img" >
+      
+                        <img src="{{slide.moduleimg}} " style="margin-top:-15px;" alt="" />
+                      </div>
+                      <div class="card-team-name">
+                        <h6>{{  slide.moduleId }} </h6>
+                        {% for sideu in slide.u %}
+    <li style=" font-size:14px;   font-weight:400">{{sideu }}  </li>
+    
+                        {% endfor %}
+                        {% for side in slide.userIdArray %}
+                         <li style="text-align:justify; font-size: 12px; line-height: 1.2rem;">{{ side | truncatechars:20 }}</li>
+                       {% endfor %}
+                       <!-- <span>{{ slide.jobTitleName | truncatechars:255 }}</span> -->
+                      </div>
+                      <div class="card-team-content bio">
+                       
+                        <p>                    </p>
+             <!--           <ul class="social" >                        <!-- <li><a href="{{ slide.slide_co }}" class="fab fa-facebook"></a></li> 
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <!-- <li><a href="#" class="fab fa-google-plus"></a></li> 
+                            <li><a href="#" class="far fa-envelope"></a></li>
+                        </ul> 
+    -->
+                      </div>
+                    </div>
+                  </div>
+               {% endif %}
+                  {% endfor %}
+    {% endif %}
+    
+    
+     {% if first_arg == 'Science' %}
+                               {% for slide in employee.Team_detail_science %}
+              {% if   slide.language == request.LANGUAGE_CODE  %}  
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+    <img src="{{slide.moduleimg}}" style="margin-top:-15px;">
+                      </div>
+                      <div class="card-team-name"> 
+    
+                        <h6>{{  slide.moduleId }} </h6>
+    {% for sideu in slide.u %}
+    <li style=" font-size:14px;  font-weight:400">{{sideu }}  </li>
+     
+    
+    {% endfor %}
+    
+                 {% for side in slide.userIdArray %}
+                         <li style="text-align:justify; font-size: 12px; line-height: 1.2rem;">{{ side | truncatechars:20 }}</li>
+    
+                       {% endfor %}
+    
+                      <!--  <span>{{ slide.jobTitleName | truncatechars:20 }}</span> -->
+                      </div>
+                      <div class="card-team-content bio">
+                       
+                     <!--   <p>{{ slide.employeeDetails | truncatechars:250 }} 
+                        </p> -->
+       <!--                 <ul class="social" >
+                            <!-- <li><a href="{{ slide.slide_co }}" class="fab fa-facebook"></a></li> 
+                            <li><a href="twitter.com/share?text@clix_tiss" class="fab fa-twitter"></a href="twitter.com/clix_oer"> </li>
+                            <!-- <li><a href="#" class="fab fa-google-plus"></a></li> 
+                            <li><a href="mailto:contact@clix.tiss.edu" class="far fa-envelope"></a href="mailto:contact@clix.tiss.edu"></li>
+                        </ul>
+    -->
+                      </div>
+                    </div>
+     
+    
+                 </div>
+    
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    
+    
+    
+     {% if first_arg == 'English' %}
+                               {% for slide in employee.Team_detail_english %}
+                                   {% if slide.language == request.LANGUAGE_CODE %}
+    
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                
+          <div class="card-team-img">
+    
+    
+                        <img src="{{slide.moduleimg}} " style="margin-top:-15px;" alt="" />
+    
+    
+                      </div>
+                      <div class="card-team-name">
+                        <h6>{{  slide.moduleId }} </h6>
+                       <!-- <span>{{ slide.jobTitleName | truncatechars:20 }}</span> -->
+    {% for sideu in slide.u %}
+    <li style=" font-size:14px;  font-weight:400; text-align:justify;">{{sideu }}  </li>
+    {% endfor %}
+    <!--
+      {% for sidu
+    -->
+      {% for side in slide.userIdArray %}
+    
+                         <li style="text-align:justify; font-size: 12px; line-height: 1.2rem;">{{ side | truncatechars:20 }}</li>
+    
+                       {% endfor %}
+    
+                      </div>
+                      <div class="card-team-content bio">
+    
+                       <!-- <p>{{ slide.employeeDetails | truncatechars:250 }}
+                        </p> -->
+       <!--                 <ul class="social" >
+                            <!-- <li><a href="{{ slide.slide_co }}" class="fab fa-facebook"></a></li> 
+                            <li><a href="twitter.com/share?text@clix_tiss" class="fab fa-twitter"></a href="twitter.com/clix_oer"> </li>
+                            <!-- <li><a href="#" class="fab fa-google-plus"></a></li> 
+                            <li><a href="mailto:contact@clix.tiss.edu" class="far fa-envelope"></a href="mailto:contact@clix.tiss.edu"></li>
+                        </ul>
+    -->
+                      </div>
+                    </div>
+                  </div>
+    
+    
+    {% endif %}
+    {% endfor %} 
+    {% endif %}
+                <!-- <div class="carousel-team-card-cell our-team ">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/26/21/04/owl-3184032__340.jpg" alt="" />
+                      </div>
+                      <div class="card-team-name">
+                        <h5>Name</h5>
+                        <span>Position</span>
+                      </div>
+                      <div class="card-team-content bio">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisi id arcu bibendum efficitur. Pellentesque maximus ac libero non iaculis.</p>
+                        <ul class="social" >
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                                                   <li><a href="#" class="fab fa-linkedin"></a>                    </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/26/21/04/owl-3184032__340.jpg" alt="" />
+                      </div>
+                      <div class="card-team-name  ">
+                          <h3 class="title">Williamson</h3>
+                          <span class="post">Teacher </span>
+                      </div>
+                      <div class="card-team-content bio">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisi id arcu bibendum efficitur. Pellentesque maximus ac libero non iaculis.</p>
+                        <ul class="social">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/26/21/04/owl-3184032__340.jpg" alt="" />
+                      </div>
+                      <div class="card-team-name">
+                          <h3 class="title">Williamson</h3>
+                          <span class="post">Teacher </span>
+                      </div>
+                      <div class="card-team-content bio">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisi id arcu bibendum efficitur. Pellentesque maximus ac libero non iaculis.</p>
+                        <ul class="social">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/26/21/04/owl-3184032__340.jpg" alt="" />
+                      </div>
+                      <div class="card-team-name">
+                        <h3>Name</h3>
+                        <span>Position</span>
+                      </div>
+                      <div class="card-team-content bio">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisi id arcu bibendum efficitur. Pellentesque maximus ac libero non iaculis.</p>
+                        <ul class="social">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-team-card-cell our-team">
+                    <div class="carousel-card-team">
+                      <div class="card-team-img">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/26/21/04/owl-3184032__340.jpg" alt="" />
+                      </div>
+                      <div class="card-team-name">
+                        <h3>Name</h3>
+                        <span>Position</span>
+                      </div>
+                      <div class="card-team-content bio">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisi id arcu bibendum efficitur. Pellentesque maximus ac libero non iaculis.</p>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
